@@ -1,7 +1,7 @@
 const Hero = () => {
   return (
     <>
-     <div className="relative py-12 overflow-hidden bg-gray-100 sm:py-16 lg:py-20 xl:py-24">
+     <div className="relative py-12 lg:h-[85vh] overflow-hidden bg-gray-100 sm:py-16 lg:py-20 xl:py-24">
         <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
           <div className="flex flex-col">
             <div className="max-w-md mx-auto text-center xl:max-w-lg lg:mx-0 lg:text-left">
