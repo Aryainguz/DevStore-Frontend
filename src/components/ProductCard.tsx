@@ -1,23 +1,23 @@
 import React from "react";
-import {AiFillPlusCircle,AiFillEye} from 'react-icons/ai'
+import { AiFillPlusCircle, AiFillEye } from "react-icons/ai";
 
-interface cardProps{
-  title:string;
-  price:number;
-  image:string;
+interface cardProps {
+  title: string;
+  price: number;
+  image: string;
 }
 
-const ProductCard:React.FC<cardProps> = ({title,price,image}) => {
+const ProductCard: React.FC<cardProps> = ({ title, price, image }) => {
   return (
     <>
       <div className="relative group cursor-pointer">
-        <div className="overflow-hidden aspect-w-1 aspect-h-1">
+        <div>
           <img
-            className="object-cover w-full h-full transition-all duration-300 group-hover:scale-125"
+            className="h-full w-[355px] rounded-lg"
             src={image}
-            alt=""
           />
         </div>
+
         <div className="absolute left-3 top-3">
           <p className="sm:px-3 sm:py-1.5 px-1.5 py-1 text-[8px] sm:text-xs font-bold tracking-wide text-gray-900 uppercase bg-white rounded-full">
             New
@@ -27,7 +27,7 @@ const ProductCard:React.FC<cardProps> = ({title,price,image}) => {
           <div>
             <h3 className="text-xs font-bold text-gray-900 sm:text-sm md:text-base">
               <a href="#" title="">
-               {title}
+                {title}
                 <span className="absolute inset-0" aria-hidden="true"></span>
               </a>
             </h3>
@@ -35,16 +35,16 @@ const ProductCard:React.FC<cardProps> = ({title,price,image}) => {
 
           <div className="text-right">
             <p className="text-xs font-bold text-gray-900 sm:text-sm md:text-base">
-             {price}
+            ₹{price}
             </p>
           </div>
         </div>
         <div className="opacity-0 group-hover:opacity-100 absolute inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 transition-opacity duration-300">
           <span className="text-gray-800 cursor-pointer text-xl bg-gray-200 px-4 py-2 rounded-full">
-            <AiFillPlusCircle/>
+            <AiFillPlusCircle />
           </span>
           <span className="text-gray-800 cursor-pointer text-xl bg-gray-200 px-4 py-2 rounded-full ml-2">
-           <AiFillEye/>
+            <AiFillEye />
           </span>
         </div>
       </div>

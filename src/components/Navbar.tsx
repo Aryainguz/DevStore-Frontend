@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FiUser } from "react-icons/fi";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
 
@@ -27,6 +27,24 @@ const Navbar = () => {
     return null
   }
 
+  const navLinks = [
+    {
+      name: "T Shirts",
+      path: "/",
+    },
+    {
+      name: "Hoodies",
+      path: "/about",
+    },
+    {
+      name: "Stickers and Posters",
+      path: "/services",
+    },
+    {
+      name: "Custom",
+      path: "/contact",
+    },
+  ]
 
 
   return (
@@ -36,46 +54,31 @@ const Navbar = () => {
           <div className="px-4 mx-auto sm:px-6 lg:px-8 xl:px-12">
             <div className="flex items-center justify-between h-16 lg:h-[72px]">
               <div className="flex items-center flex-shrink-0">
-                <a href="#" title="" className="inline-flex font-bold text-2xl">
+                <Link to={"/"} className="inline-flex font-bold text-2xl">
                   DevStore.
-                </a>
+                </Link>
               </div>
 
               <div className="hidden lg:flex lg:justify-start lg:ml-16 lg:space-x-8 xl:space-x-14">
-                <a
-                  href="#"
-                  title=""
-                  className="text-base font-medium text-gray-900 transition-all duration-200 rounded focus:outline-none hover:text-gray-700 focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
-                >
-                  {" "}
-                  T Shirts{" "}
-                </a>
+              
+                {
+                  navLinks.map((link) => (
+                    <Link
+                    to={link.path}
+                    title=""
+                    className="text-base font-medium text-gray-700 transition-all duration-200 rounded hover:text-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+                  >
+                    {" "}
+                    {link.name}{" "}
+                  </Link>
+                  ))
+                }
 
-                <a
-                  href="#"
-                  title=""
-                  className="text-base font-medium text-gray-900 transition-all duration-200 rounded hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
-                >
-                  {" "}
-                  Hoodies{" "}
-                </a>
 
-                <a
-                  href="#"
-                  title=""
-                  className="text-base font-medium text-gray-900 transition-all duration-200 rounded hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
-                >
-                  {" "}
-                  Stickers and Posters{" "}
-                </a>
-                <a
-                  href="#"
-                  title=""
-                  className="text-base font-medium text-gray-900 transition-all duration-200 rounded hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
-                >
-                  {" "}
-                  Accessories{" "}
-                </a>
+
+
+               
+               
               </div>
 
               <div className="flex items-center justify-end ml-auto">

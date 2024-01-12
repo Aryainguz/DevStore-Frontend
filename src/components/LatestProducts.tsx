@@ -29,10 +29,12 @@ const LatestProducts = () => {
 
 
 
-        <div className="grid grid-cols-2 gap-6 mt-10 lg:mt-16 lg:gap-4 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-6 mt-10 lg:mt-16 lg:gap-4 lg:grid-cols-4">
 
           <ProductCard title="demo" price={2000} image="https://www.beyours.in/cdn/shop/files/charcoal-blue-hoodie-3_800x.jpg?v=1695718605"  />
-
+          <ProductCard title="demo" price={2000} image="https://www.beyours.in/cdn/shop/files/charcoal-blue-hoodie-3_800x.jpg?v=1695718605"  />
+          <ProductCard title="demo" price={2000} image="https://guruofficialbrand.com/wp-content/uploads/2022/05/C52A75811-768x512.jpg"  />
+          <ProductCard title="demo" price={2000} image="https://www.beyours.in/cdn/shop/files/charcoal-blue-hoodie-3_800x.jpg?v=1695718605"  />
 
         </div>
       </div>
