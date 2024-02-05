@@ -1,8 +1,8 @@
 import { ReactElement, useCallback, useMemo, useState } from "react";
-import TableHOC from "./TableHOC";
-import { Column } from "react-table";
-import { Link } from "react-router-dom";
 import { AiFillDelete } from "react-icons/ai";
+import { Link } from "react-router-dom";
+import { Column } from "react-table";
+import TableHOC from "./TableHOC";
 
 interface DataType {
     product:string;

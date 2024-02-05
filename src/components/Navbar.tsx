@@ -1,18 +1,17 @@
-import { useState } from "react";
 import { FiUser } from "react-icons/fi";
 import { Link, useLocation } from "react-router-dom";
-import SlideCart from "./SlideCart";
 
 const Navbar = () => {
   const location = useLocation();
 
   const isAdminRoute = location.pathname.includes("/admin");
+  const login = true;
 
-  const [login, setLogin] = useState(false);
+  // const [login, setLogin] = useState(false);
 
-  const openSidebar = () => {
-    document.querySelector(".menu")?.classList.toggle("hidden");
-  };
+  // const openSidebar = () => {
+  //   document.querySelector(".menu")?.classList.toggle("hidden");
+  // };
   const openAccountMenu = () => {
     document.querySelector(".account_menu")?.classList.toggle("hidden");
   };

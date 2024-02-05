@@ -1,4 +1,3 @@
-import React from 'react'
 
 const SideCart = () => {
   return (
@@ -28,7 +27,7 @@ const SideCart = () => {
                         <button
                           type="button"
                           className="relative -m-2 p-2 text-gray-400 hover:text-gray-500"
-                          onClick={toggleSideabar}
+                          // onClick={toggleSideabar}
                         >
                           <span className="absolute -inset-0.5" />
                           <span className="sr-only">Close panel</span>

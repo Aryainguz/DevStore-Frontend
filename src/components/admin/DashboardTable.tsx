@@ -1,5 +1,5 @@
-import TableHOC from './TableHOC'
 import { Column } from 'react-table'
+import TableHOC from './TableHOC'
 
 interface DataType{
     id:number,

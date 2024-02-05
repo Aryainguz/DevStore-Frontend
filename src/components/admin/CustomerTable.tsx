@@ -1,9 +1,9 @@
 import { ReactElement, useCallback, useMemo, useState } from "react";
-import TableHOC from "./TableHOC";
-import { Column } from "react-table";
-import img from '../../assets/download (4).jpg'
-import { Link } from "react-router-dom";
 import { AiFillDelete } from "react-icons/ai";
+import { Link } from "react-router-dom";
+import { Column } from "react-table";
+import img from '../../assets/download (4).jpg';
+import TableHOC from "./TableHOC";
 
 interface DataType {
   id: number;

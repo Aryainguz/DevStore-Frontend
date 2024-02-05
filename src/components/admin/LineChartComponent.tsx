@@ -1,18 +1,18 @@
-import React from "react";
 import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
   BarElement,
-  Title,
-  Tooltip,
-  Legend,
+  CategoryScale,
   ChartData,
+  Chart as ChartJS,
   ChartOptions,
-  PointElement,
+  Filler,
+  Legend,
   LineElement,
-  Filler
+  LinearScale,
+  PointElement,
+  Title,
+  Tooltip
 } from "chart.js";
+import React from "react";
 import { Line } from "react-chartjs-2";
 
 ChartJS.register(

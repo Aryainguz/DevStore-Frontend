@@ -1,7 +1,6 @@
-import React from 'react'
-import Sidebar from '../../components/admin/Sidebar'
-import PieChartComponent from '../../components/admin/PieChartComponent'
 import DoughnutChart from '../../components/admin/DougnutChart'
+import PieChartComponent from '../../components/admin/PieChartComponent'
+import Sidebar from '../../components/admin/Sidebar'
 
 const categories = [
     {

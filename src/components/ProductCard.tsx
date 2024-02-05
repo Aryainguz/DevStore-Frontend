@@ -1,5 +1,5 @@
 import React from "react";
-import { AiFillPlusCircle, AiFillEye } from "react-icons/ai";
+import { AiFillEye, AiFillPlusCircle } from "react-icons/ai";
 
 interface cardProps {
   title: string;

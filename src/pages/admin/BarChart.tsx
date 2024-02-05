@@ -1,6 +1,5 @@
-import React from "react";
-import Sidebar from '../../components/admin/Sidebar';
 import BarGraph from '../../components/admin/BarGraph';
+import Sidebar from '../../components/admin/Sidebar';
 
 const BarChart = () => {
   const months = [
