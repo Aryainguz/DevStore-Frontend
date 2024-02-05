@@ -15,9 +15,10 @@ const Contact = () => {
                   Contact Us
                 </h2>
                 <p className="mb-9 text-base leading-relaxed text-body-color dark:text-dark-6">
-                 Our wide range of designer can make your ideas come into your outwears with the best quality and price. Get your customization today!
+                  Our wide range of designer can make your ideas come into your
+                  outwears with the best quality and price. Get your
+                  customization today!
                 </p>
-               
 
                 <div className="mb-8 flex w-full max-w-[370px]">
                   <div className="mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded bg-primary/5 text-primary sm:h-[70px] sm:max-w-[70px]">
@@ -104,7 +105,7 @@ const Contact = () => {
                     placeholder="Your Phone"
                   />
                   <ContactTextArea
-                    row= {6}
+                    row={6}
                     placeholder="Your Message"
                     name="details"
                     defaultValue=""
@@ -938,13 +939,18 @@ const Contact = () => {
 export default Contact;
 
 interface ContactTextAreaProps {
-    row: number;
-    placeholder: string;
-    name: string;
-    defaultValue: string;
-    }
+  row: number;
+  placeholder: string;
+  name: string;
+  defaultValue: string;
+}
 
-const ContactTextArea:React.FC<ContactTextAreaProps> = ({ row, placeholder, name, defaultValue }) => {
+const ContactTextArea: React.FC<ContactTextAreaProps> = ({
+  row,
+  placeholder,
+  name,
+  defaultValue,
+}) => {
   return (
     <>
       <div className="mb-6">
@@ -960,14 +966,17 @@ const ContactTextArea:React.FC<ContactTextAreaProps> = ({ row, placeholder, name
   );
 };
 
-
 interface ContactInputBoxProps {
-    type: string;
-    placeholder: string;
-    name: string;
-    }   
+  type: string;
+  placeholder: string;
+  name: string;
+}
 
-const ContactInputBox:React.FC<ContactInputBoxProps> = ({ type, placeholder, name }) => {
+const ContactInputBox: React.FC<ContactInputBoxProps> = ({
+  type,
+  placeholder,
+  name,
+}) => {
   return (
     <>
       <div className="mb-6">

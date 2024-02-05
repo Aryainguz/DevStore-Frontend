@@ -12,10 +12,7 @@ const ProductCard: React.FC<cardProps> = ({ title, price, image }) => {
     <>
       <div className="relative group cursor-pointer">
         <div>
-          <img
-            className="h-full w-[355px] rounded-lg"
-            src={image}
-          />
+          <img className="h-full w-[355px] rounded-lg" src={image} />
         </div>
 
         <div className="absolute left-3 top-3">
@@ -35,7 +32,7 @@ const ProductCard: React.FC<cardProps> = ({ title, price, image }) => {
 
           <div className="text-right">
             <p className="text-xs font-bold text-gray-900 sm:text-sm md:text-base">
-            ₹{price}
+              ₹{price}
             </p>
           </div>
         </div>

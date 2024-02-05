@@ -1,15 +1,14 @@
 import { useState } from "react";
 import { FiUser } from "react-icons/fi";
 import { Link, useLocation } from "react-router-dom";
+import SlideCart from "./SlideCart";
 
 const Navbar = () => {
-
   const location = useLocation();
 
-  const isAdminRoute = location.pathname.includes("/admin")
+  const isAdminRoute = location.pathname.includes("/admin");
 
   const [login, setLogin] = useState(false);
-
 
   const openSidebar = () => {
     document.querySelector(".menu")?.classList.toggle("hidden");
@@ -20,36 +19,39 @@ const Navbar = () => {
 
   const openAccountMenuDesktop = () => {
     document.querySelector(".accmenu")?.classList.toggle("hidden");
-  }
+  };
 
-
-  if(isAdminRoute){
-    return null
+  if (isAdminRoute) {
+    return null;
   }
 
   const navLinks = [
     {
       name: "T Shirts",
-      path: "/",
+      path: "/tshirts",
     },
     {
       name: "Hoodies",
-      path: "/about",
+      path: "/hoodies",
     },
     {
       name: "Stickers and Posters",
-      path: "/services",
+      path: "/stickers",
     },
     {
       name: "Custom",
       path: "/contact",
     },
-  ]
+  ];
 
+
+  const toggleSideabar = () => {
+    document.querySelector(".slide-over")?.classList.toggle("hidden");
+  };
 
   return (
     <>
-      <section>
+      <section className="border-b">
         <header className="bg-white">
           <div className="px-4 mx-auto sm:px-6 lg:px-8 xl:px-12">
             <div className="flex items-center justify-between h-16 lg:h-[72px]">
@@ -60,10 +62,8 @@ const Navbar = () => {
               </div>
 
               <div className="hidden lg:flex lg:justify-start lg:ml-16 lg:space-x-8 xl:space-x-14">
-              
-                {
-                  navLinks.map((link) => (
-                    <Link
+                {navLinks.map((link) => (
+                  <Link
                     to={link.path}
                     title=""
                     className="text-base font-medium text-gray-700 transition-all duration-200 rounded hover:text-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
@@ -71,52 +71,41 @@ const Navbar = () => {
                     {" "}
                     {link.name}{" "}
                   </Link>
-                  ))
-                }
-
-
-
-
-               
-               
+                ))}
               </div>
 
               <div className="flex items-center justify-end ml-auto">
                 <div className="hidden lg:flex lg:items-center lg:space-x-10">
                   {login ? (
                     <>
-                        <button
-                          type="button"
-                          className="text-xl absolute text-black right-24"
-                          onClick={openAccountMenuDesktop}
-                        >
-                          <FiUser/>
-                        </button>
+                      <button
+                        type="button"
+                        className="text-xl absolute text-black right-24"
+                        onClick={openAccountMenuDesktop}
+                      >
+                        <FiUser />
+                      </button>
 
-                        <div
-                          className="z-10 relative top-16 right-22 accmenu hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44"
-                        >
-                          <ul
-                            className="py-2 text-sm text-gray-700"
-                          >
-                            <li>
-                              <a
-                                href="#"
-                                className="block px-4 py-2 hover:bg-gray-300"
-                              >
-                               aryans12345678
-                              </a>
-                            </li>
-                            <li>
-                              <a
-                                href="#"
-                                className="block px-4 py-2 hover:bg-gray-300"
-                              >
-                                Sign Out
-                              </a>
-                            </li>
-                          </ul>
-                        </div>
+                      <div className="z-10 relative top-16 right-22 accmenu hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+                        <ul className="py-2 text-sm text-gray-700">
+                          <li>
+                            <a
+                              href="#"
+                              className="block px-4 py-2 hover:bg-gray-300"
+                            >
+                              aryans12345678
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              className="block px-4 py-2 hover:bg-gray-300"
+                            >
+                              Sign Out
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
                     </>
                   ) : (
                     <a
@@ -134,7 +123,7 @@ const Navbar = () => {
                   <button
                     type="button"
                     className="p-2 -m-2 text-gray-900 transition-all duration-200 lg:hidden hover:text-gray-700"
-                    onClick={openSidebar}
+                    onClick={toggleSideabar}
                   >
                     <svg
                       className="w-6 h-6"
@@ -155,6 +144,7 @@ const Navbar = () => {
                   <button
                     type="button"
                     className="relative p-2 text-gray-900 transition-all duration-200 hover:text-gray-700"
+                    onClick={toggleSideabar}
                   >
                     <svg
                       className="w-6 h-6"
@@ -177,6 +167,8 @@ const Navbar = () => {
                     </span>
                   </button>
                 </div>
+               {/* sidebar  */}
+
               </div>
             </div>
           </div>
@@ -211,7 +203,7 @@ const Navbar = () => {
                     className="block py-2 px-3 rounded"
                     aria-current="page"
                   >
-                     aryans12345678
+                    aryans12345678
                   </a>
                 </li>
                 <li>
