@@ -23,7 +23,9 @@ const Navbar = lazy(() => import("./components/Navbar"));
 const Cart = lazy(() => import("./pages/Cart"));
 const Footer = lazy(() => import("./components/Footer"));
 const Contact = lazy(() => import("./pages/Contact"));
-const Products = lazy(()=>import("./pages/Hoodies"))
+const Hoodies = lazy(()=>import("./pages/Hoodies"))
+const Tshirts = lazy(()=>import("./pages/Tshirts"))
+const Stickers = lazy(()=>import("./pages/Stickers"))
 
 function App() {
   return (
@@ -33,9 +35,9 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/tshirts" element={<Products />} />
-            <Route path="/hoodies" element={<Products />} />
-            <Route path="/stickers" element={<Products />} />
+            <Route path="/tshirts" element={<Tshirts />} />
+            <Route path="/hoodies" element={<Hoodies />} />
+            <Route path="/stickers" element={<Stickers />} />
             <Route path="/Cart" element={<Cart />} />
 
             {/* {Admin Routes }  */}
