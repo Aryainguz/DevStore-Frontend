@@ -7,7 +7,7 @@ import "./index.css";
 
 const Admin = lazy(() => import("./pages/admin/Admin"));
 const Customer = lazy(() => import("./pages/admin/Customer"));
-const Product = lazy(() => import("./pages/admin/Product"));
+const AllProducts = lazy(() => import("./pages/admin/AllProducts"));
 const Transaction = lazy(() => import("./pages/admin/Transaction"));
 const AddProduct = lazy(() => import("./pages/admin/AddProduct"));
 const ProductManage = lazy(() => import("./pages/admin/ProductManage"));
@@ -23,9 +23,7 @@ const Navbar = lazy(() => import("./components/Navbar"));
 const Cart = lazy(() => import("./pages/Cart"));
 const Footer = lazy(() => import("./components/Footer"));
 const Contact = lazy(() => import("./pages/Contact"));
-const Tshirts = lazy(() => import("./pages/Tshirts"));
-const Hoodies = lazy(() => import("./pages/Hoodies"));
-const Stickers = lazy(() => import("./pages/Stickers"));
+const Products = lazy(()=>import("./pages/Hoodies"))
 
 function App() {
   return (
@@ -35,14 +33,14 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/tshirts" element={<Tshirts />} />
-            <Route path="/hoodies" element={<Hoodies />} />
-            <Route path="/stickers" element={<Stickers />} />
+            <Route path="/tshirts" element={<Products />} />
+            <Route path="/hoodies" element={<Products />} />
+            <Route path="/stickers" element={<Products />} />
             <Route path="/Cart" element={<Cart />} />
 
             {/* {Admin Routes }  */}
             <Route path="/devstore/admin" element={<Admin />} />
-            <Route path="/devstore/admin/products" element={<Product />} />
+            <Route path="/devstore/admin/products" element={<AllProducts />} />
             <Route path="/devstore/admin/addproduct" element={<AddProduct />} />
             <Route path="/devstore/admin/customers" element={<Customer />} />
             <Route path="/devstore/admin/coupans" element={<Coupan />} />
