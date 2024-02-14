@@ -5,6 +5,7 @@ interface cardProps {
   title: string;
   price: number;
   image: string;
+  productid: number;
 }
 
 const ProductCard: React.FC<cardProps> = ({ title, price, image }) => {

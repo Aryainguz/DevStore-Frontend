@@ -1,7 +1,26 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import ProductCard from "./ProductCard";
 
-const HoodiesComponent = () => {
+
+type Product = {
+  title:string,
+  price:number,
+  image:string
+  productid:number
+}
+
+interface ProductsProps{
+  heading:string,
+  tagline:string,
+  description:string,
+  data:Product[]
+}
+
+const ProductsComponent:React.FC<ProductsProps> = ({heading,tagline,description,data}) => {
+
+  const location = useLocation();
+  const path = location.pathname
+
   return (
     <>
       <section className="py-12 bg-white sm:py-16 lg:py-20">
@@ -11,15 +30,13 @@ const HoodiesComponent = () => {
               <div className="w-full px-4">
                 <div className="mx-auto mb-[60px] max-w-[510px] text-center lg:mb-20">
                   <span className="block mb-2 text-lg font-semibold text-indigo-500">
-                    Our Comfy Hoodies
+                    {tagline}
                   </span>
                   <h2 className="mb-4 text-3xl font-bold text-dark sm:text-4xl md:text-[40px]">
-                    Hoodies
+                    {heading}
                   </h2>
                   <p className="text-base text-body-color dark:text-dark-6">
-                    There are many variations of passages of Lorem Ipsum
-                    available but the majority have suffered alteration in some
-                    form.
+                    {description}
                   </p>
                 </div>
               </div>
@@ -30,7 +47,7 @@ const HoodiesComponent = () => {
             <Link to={"/tshirts"}>
               <button
                 type="button"
-                className="px-4 py-2 text-sm font-lg text-gray-900 bg-white border border-gray-200 rounded-s-lg hover:bg-gray-100 hover:text-indigo-700 focus:z-10 focus:ring-2 focus:ring-indigo-700 focus:text-indigo-700"
+                className={`${path === `/tshirts` && `ring-2 ring-indigo-700 text-indigo-700`} px-4 py-2 text-sm font-lg text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-indigo-700 focus:z-10 focus:ring-2 focus:ring-indigo-700 focus:text-indigo-700`}
               >
                 T Shirts
               </button>
@@ -38,7 +55,7 @@ const HoodiesComponent = () => {
             <Link to={"/hoodies"}>
               <button
                 type="button"
-                className="px-4 py-2 text-sm font-lg text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-indigo-700 focus:z-10 focus:ring-2 focus:ring-indigo-700 focus:text-indigo-700"
+                className={`${path === `/hoodies` && `ring-2 ring-indigo-700 text-indigo-700`} px-4 py-2 text-sm font-lg text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-indigo-700 focus:z-10 focus:ring-2 focus:ring-indigo-700 focus:text-indigo-700`}
               >
                 Hoodies
               </button>
@@ -46,7 +63,7 @@ const HoodiesComponent = () => {
             <Link to={"/stickers"}>
               <button
                 type="button"
-                className="px-4 py-2 text-sm font-lg text-gray-900 bg-white border border-gray-200 rounded-e-lg hover:bg-gray-100 hover:text-indigo-700 focus:z-10 focus:ring-2 focus:ring-indigo-700 focus:text-indigo-700"
+                className={`${path === `/stickers` && `ring-2 ring-indigo-700 text-indigo-700`} px-4 py-2 text-sm font-lg text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-indigo-700 focus:z-10 focus:ring-2 focus:ring-indigo-700 focus:text-indigo-700`}
               >
                 Stickers
               </button>
@@ -87,41 +104,16 @@ const HoodiesComponent = () => {
 
 
           <div className="flex flex-wrap gap-2 xl:gap-16 flex-col sm:flex-row">
-            <ProductCard
-              title="demo"
-              price={2000}
-              image="https://www.beyours.in/cdn/shop/files/charcoal-blue-hoodie-3_800x.jpg?v=1695718605"
-            />
-            <ProductCard
-              title="demo"
-              price={2000}
-              image="https://www.beyours.in/cdn/shop/files/charcoal-blue-hoodie-3_800x.jpg?v=1695718605"
-            />
-            <ProductCard
-              title="demo"
-              price={2000}
-              image="https://www.beyours.in/cdn/shop/files/charcoal-blue-hoodie-3_800x.jpg?v=1695718605"
-            />
-            <ProductCard
-              title="demo"
-              price={2000}
-              image="https://www.beyours.in/cdn/shop/files/charcoal-blue-hoodie-3_800x.jpg?v=1695718605"
-            />
-            <ProductCard
-              title="demo"
-              price={2000}
-              image="https://guruofficialbrand.com/wp-content/uploads/2022/05/C52A75811-768x512.jpg"
-            />
-            <ProductCard
-              title="demo"
-              price={2000}
-              image="https://guruofficialbrand.com/wp-content/uploads/2022/05/C52A75811-768x512.jpg"
-            />
-            <ProductCard
-              title="demo"
-              price={2000}
-              image="https://guruofficialbrand.com/wp-content/uploads/2022/05/C52A75811-768x512.jpg"
-            />
+           {
+            data.map((product,i) => (
+              <ProductCard
+                key={i}
+                productid={product.productid}
+                title={product.title}
+                price={product.price}
+                image={product.image}
+              />))
+           }
           </div>
         </div>
       </section>
@@ -129,4 +121,4 @@ const HoodiesComponent = () => {
   );
 };
 
-export default HoodiesComponent;
+export default ProductsComponent;
