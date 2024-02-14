@@ -6,9 +6,15 @@ interface cardProps {
   price: number;
   image: string;
   productid: number;
+  bestseller?: boolean;
 }
 
-const ProductCard: React.FC<cardProps> = ({ title, price, image }) => {
+const ProductCard: React.FC<cardProps> = ({
+  title,
+  price,
+  image,
+  bestseller,
+}) => {
   return (
     <>
       <div className="relative group cursor-pointer">
@@ -17,9 +23,11 @@ const ProductCard: React.FC<cardProps> = ({ title, price, image }) => {
         </div>
 
         <div className="absolute left-3 top-3">
-          <p className="sm:px-3 sm:py-1.5 px-1.5 py-1 text-[8px] sm:text-xs font-bold tracking-wide text-gray-900 uppercase bg-white rounded-full">
-            New
-          </p>
+          {bestseller && (
+            <p className="sm:px-3 sm:py-1.5 px-1.5 py-1 text-[8px] sm:text-xs font-bold tracking-wide text-gray-900 uppercase bg-white rounded-full">
+              Best Selling
+            </p>
+          )}
         </div>
         <div className="flex items-start justify-between mt-4 space-x-4">
           <div>

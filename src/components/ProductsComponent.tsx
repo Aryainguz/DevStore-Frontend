@@ -5,7 +5,8 @@ import ProductCard from "./ProductCard";
 type Product = {
   title:string,
   price:number,
-  image:string
+  image:string,
+  bestseller?:boolean,
   productid:number
 }
 
@@ -112,6 +113,7 @@ const ProductsComponent:React.FC<ProductsProps> = ({heading,tagline,description,
                 title={product.title}
                 price={product.price}
                 image={product.image}
+                bestseller={product.bestseller}
               />))
            }
           </div>
